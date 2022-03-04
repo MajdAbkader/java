@@ -31,6 +31,22 @@ public class FirstNonRepeatedCharFour {
         }
         return map.entrySet().stream().filter(x -> x.getValue() == 1).findFirst().get().getKey();
 } 
+
+
+
+
+public class WordCount
+{
+    public static void main(String[] args)
+    {
+        List<String> list = Arrays.asList(
+            "hello", "bye", "ciao", "bye", "ciao");
+        Map<String, Integer> counts = list.parallelStream().
+            collect(Collectors.toConcurrentMap(
+                w -> w, w -> 1, Integer::sum));
+        System.out.println(counts);
+    }
+}
     
 
     public static void main(String[] args)
