@@ -40,7 +40,7 @@ public class WordCount
     public static void main(String[] args)
     {
         List<String> list = Arrays.asList(
-            "hello", "bye", "ciao", "bye", "ciao");
+            "hello";
         Map<String, Integer> counts = list.parallelStream().
             collect(Collectors.toConcurrentMap(
                 w -> w, w -> 1, Integer::sum));
@@ -51,7 +51,7 @@ public class WordCount
 
     public static void main(String[] args)
     {
-        String s = "hello";
+        String s = "CodeOnceTest";
         char ch = findFirstNonRepeatableChar(s);
         System.out.println( ch);
     }
